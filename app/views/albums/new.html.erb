@@ -1,0 +1,32 @@
+<h1>Add A New Album</h1>
+
+<%= form_for @album do |a| %>
+  <div>
+    <%= a.label :title %>
+    <%= a.text_field :title %>
+  </div>
+  <div>
+    <%= a.label :artist %>
+    <%= a.text_field :artist %>
+  </div>
+  <div>
+    <%= a.label :genre %>
+    <%= a.text_field :genre %>
+  </div>
+  <div>
+    <%= a.label :year %>
+    <%= a.text_field :year %>
+  </div>
+  <div>
+    <%= a.label :length %>
+    <%= a.text_field :length %>
+  </div>
+  <div>
+    <%= a.label :tracks %>
+    <%= a.text_field :tracks %>
+  </div>
+
+  <div>
+    <%= a.submit "Submit" %>
+  </div>
+<% end %>
