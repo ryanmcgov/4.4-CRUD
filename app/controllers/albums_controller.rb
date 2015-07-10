@@ -18,6 +18,9 @@ class AlbumsController < ApplicationController
     @album.destroy!
     redirect_to albums_path
   end
+  def edit
+    @album = Album.find(params[:id])
+  end
 
   private
 
