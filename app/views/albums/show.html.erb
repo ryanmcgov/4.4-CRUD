@@ -1,6 +1,4 @@
-<% @title = "Add An Album" %>
-
-<h1>Add A New Album</h1>
+<% @title =  "Edit Album" %>
 
 <%= form_for @album do |a| %>
   <% if @album.errors.full_messages.present? %>
@@ -38,7 +36,7 @@
   </div>
 
   <div>
-    <%= a.submit "Add Album" %>
+    <%= a.submit "Edit Album" %>
     <%= link_to "Back To Albums", albums_path%>
   </div>
 <% end %>
