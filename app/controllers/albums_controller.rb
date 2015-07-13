@@ -14,18 +14,18 @@ class AlbumsController < ApplicationController
     end
   end
   def destroy
-    @album = Album.find(params[:id])
+    @album = get_album
     @album.destroy!
     redirect_to albums_path
   end
   def show
-    @album = Album.find(params[:id])
+    @album = get_album
   end
   def edit
-    @album = Album.find(params[:id])
+    @album = get_album
   end
   def update
-    @album = Album.find(params[:id])
+    @album = get_album
     if @album.update_attributes(album_params)
       redirect_to albums_path
     else
@@ -37,5 +37,8 @@ class AlbumsController < ApplicationController
 
   def album_params
     params.require(:album).permit(:title, :artist, :genre, :year, :length, :tracks)
+  end
+  def get_album 
+    @album = Album.find(params[:id])
   end
 end
