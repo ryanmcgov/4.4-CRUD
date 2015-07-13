@@ -1,0 +1,42 @@
+<% @title =  "Albums" %>
+<h1>All Albums</h1>
+<%= link_to "Add New Album", new_album_path %>
+
+<ul>
+  <% @albums.each do |a| %>
+    <li>
+      <%= a.title %>
+
+      -
+
+      <%= a.artist %>
+
+      -
+
+      <%= a.genre %>
+
+      -
+
+      <%= a.year %>
+
+      -
+
+      <%= a.length %>
+
+      -
+
+      <%= a.tracks %>
+
+      -
+
+      -
+      <%= link_to "Delete", album_path(a), :method => :delete %>
+
+      -
+
+      -
+
+      <%= link_to "Edit", album_path(a), :method => :get %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,44 @@
+<% @title =  "Edit Album" %>
+
+<h1>Edit Album</h1> 
+
+<%= form_for @album do |a| %>
+  <% if @album.errors.full_messages.present? %>
+    <ul>
+      <% @album.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div>
+    <%= a.label :title %>
+    <%= a.text_field :title %>
+  </div>
+  <div>
+    <%= a.label :artist %>
+    <%= a.text_field :artist %>
+  </div>
+  <div>
+    <%= a.label :genre %>
+    <%= a.text_field :genre %>
+  </div>
+  <div>
+    <%= a.label :year %>
+    <%= a.text_field :year %>
+  </div>
+  <div>
+    <%= a.label :length %>
+    <%= a.text_field :length %>
+  </div>
+  <div>
+    <%= a.label :tracks %>
+    <%= a.text_field :tracks %>
+  </div>
+
+  <div>
+    <%= a.submit "Edit Album" %>
+    <%= link_to "Back To Albums", albums_path%>
+  </div>
+<% end %>
